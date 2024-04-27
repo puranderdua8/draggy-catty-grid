@@ -9,7 +9,7 @@ const Card = ({title, image}: ICard) => {
     return (
         <div>
             <h4 className="cat-title">{title}</h4>
-            <img className="cat-image" src={image} alt={title} />
+            <img className="cat-image" src={image} alt={title} loading='lazy' />
         </div>
     )
 };

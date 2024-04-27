@@ -26,10 +26,11 @@ function App() {
   
   return (
     <div className="grid-container">
-      { cats.map((cat: Cat) => <div onClick={() => openModal(cat)}><Card title={cat.title} image={cat.image} key={cat.type} /></div>) }
-      <ImageModal ref={modalRef} onClose={function (): void {
-			  throw new Error('Function not implemented.');
-		  } } />
+		<h2>A Draggy Catty Grid</h2>
+      	{ cats.map((cat: Cat) => <div onClick={() => openModal(cat)}><Card title={cat.title} image={cat.image} key={cat.type} /></div>) }
+      	<ImageModal ref={modalRef} onClose={function (): void {
+			throw new Error('Function not implemented.');
+		} } />
     </div>
   )
 }

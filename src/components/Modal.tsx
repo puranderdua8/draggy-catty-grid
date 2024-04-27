@@ -47,7 +47,7 @@ const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalHandle>)
     return (
         <div className={`modal-container ${open ? 'opened' : ''}`}>
             <div className="image-container">
-                <img src={image} alt="Preview image" />
+                <img src={image} alt="Preview image" loading="lazy" />
             </div>
         </div>
     )
