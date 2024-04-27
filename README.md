@@ -32,12 +32,13 @@ I think there might be more props involved, but this seems like the bare minimum
 #### Note
 I am going to create the modal as an uncontrolled component i.e. it’s state is being managed from within the component and not in the parent.
 I want to follow this approach because the parent will have a grid of cards that we might not want to re-render every time the modal opens.
-I would use react's useImperativeHandle along with forwardRef to create a component that exposes the method to trigger opening of the modal.
+I would use react's `useImperativeHandle` along with `forwardRef` to create a component that exposes the method to trigger opening of the modal.
 I would trigger this method on click of a card in the parent and the modal should work as expected.
 
 I have completed the basic functionality of the application, i.e. showing a grid of cats and previewing the selected one.
 
 #### Next steps:
+
 Implement lazy loading for images - show a loader by default, and use the image onLoad prop to handle hiding of the loader.(will create an image component that takes care of individual loading states and accepts image URL as a prop).
 Implement drag-and-drop for image cards - mark individual cards as draggable and onDrop of a card, identify the card which is being dropped on and swap the positions of the two cards.
 
@@ -46,9 +47,13 @@ I will then start working on the creation of a local service that mocks a server
 `localStorage` will remember the data even on close of the tab, but `sessionStorage` might be better if we want fresh data every time user opens the URL.
 
 ## How to run
+
 Clone the repository using either git clone or ssh
+
 Go to the root folder
+
 run `npm install`
+
 run `npm run dev`
 
 
