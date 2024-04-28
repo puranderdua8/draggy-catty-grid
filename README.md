@@ -41,11 +41,11 @@ I have completed the front-end part of the task, i.e. showing a grid of cats, pr
 
 I have completed step 2 of the task. I managed to set up a mock service worker with a `/api/cats` endpoint that gives us the data we need.
 As the app mounts, I store the mock data in the cache before the app mounts and fetch data from the cache in the mock service.
+I wanted to test whether things are working fine or not and I called the API as a part of step 2 itself.
 
 #### Next steps:
 
-Working on the creation of a local service that mocks a server and persisting data in the browser via `localStorage/sessionStorage`.
-`localStorage` will remember the data even on close of the tab, but `sessionStorage` might be better if we want fresh data every time user opens the URL.
+Working on the auto-refresh and save functionality if the order has changed to finish step 3.
 
 Use docker to start application as a micro-service
 
