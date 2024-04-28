@@ -1,6 +1,6 @@
 import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
-import Image from '../Image/Image';
-import './Modal.css';
+import { Image } from '../Image';
+import './ImageModal.css';
 
 interface IModalProps {
     onClose?: () => void;
@@ -10,7 +10,7 @@ interface IModalHandle {
     open: (cat: Cat) => void;
 }
 
-const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalHandle>) => {
+export const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalHandle>) => {
     
     const {onClose} = props;
     const [image, setImage] = useState<string>('');
@@ -53,5 +53,3 @@ const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalHandle>)
         </div>
     )
 });
-
-export default ImageModal;

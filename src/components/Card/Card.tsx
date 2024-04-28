@@ -1,4 +1,5 @@
-import Image from '../Image/Image';
+import { FC } from 'react';
+import {Image} from '../Image';
 import './Card.css';
 
 interface ICard {
@@ -7,13 +8,13 @@ interface ICard {
     onImageClick?: () => void;
 }
 
-const Card = ({title, image, onImageClick}: ICard) => {
-    return (
-        <div>
-            <h4 className="cat-title">{title}</h4>
-            <Image url={image} alt={title} width={400} height={400} onClick={onImageClick} />
-        </div>
-    )
-};
-
-export default Card;
+export const Card: FC<ICard> = ({
+    title, 
+    image, 
+    onImageClick
+}) => (
+    <div>
+        <h4 className="cat-title">{title}</h4>
+        <Image url={image} alt={title} width={400} height={400} onClick={onImageClick} />
+    </div>
+);

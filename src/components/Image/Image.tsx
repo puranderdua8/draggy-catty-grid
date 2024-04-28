@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Loader from '../Loader/Loader';
 import './Image.css';
 
-const Image = ({url, alt, width, height, onClick}: {url: string;alt: string;width: number; height: number, onClick?: () => void}) => {
+export const Image = ({url, alt, width, height, onClick}: {url: string;alt: string;width: number; height: number, onClick?: () => void}) => {
     
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -13,5 +13,3 @@ const Image = ({url, alt, width, height, onClick}: {url: string;alt: string;widt
         {<img src={url} onLoad={hideLoader} alt={alt} onError={hideLoader} draggable={false} />}
     </div>
 };
-
-export default Image;

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import ImageModal from './components/ImageModal/ImageModal';
+import { ImageModal } from './components/ImageModal';
 import { getCats } from './services/cats';
-import Card from './components/Card/Card';
+import { Card } from './components/Card';
 
 function App() {
 
@@ -60,8 +60,9 @@ function App() {
 	// Fetch the list of cats on mount
 	useEffect(() => {
 		(async function() {
-			const catList = await getCats();
-			setCats(catList);
+				const catList = await getCats();
+				console.log(catList);
+				setCats(catList.cats);
 		}());
 	}, []);
   
@@ -69,7 +70,7 @@ function App() {
 	<div className="app-container">
 		<h2 className="app-title">A Draggy Catty Grid</h2>
 		<div className="grid-container">
-      		{cats.map(
+      		{cats?.map(
 				(cat: Cat) => 
 					<div 
 						className="draggable-card-wrapper"
