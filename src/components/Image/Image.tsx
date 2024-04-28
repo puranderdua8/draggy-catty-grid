@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import Loader from '../Loader/Loader';
 import './Image.css';
 
-export const Image = ({url, alt, width, height, onClick}: {url: string;alt: string;width: number; height: number, onClick?: () => void}) => {
+interface IImage {
+    url: string;
+    alt: string;
+    width: number;
+    height: number;
+    onClick?: () => void};
+
+export const Image: FC<IImage> = ({url, alt, width, height, onClick}) => {
     
     const [loading, setLoading] = useState<boolean>(true);
 

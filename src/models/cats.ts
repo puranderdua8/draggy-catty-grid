@@ -1,6 +1,6 @@
-interface Cat {
+export interface Cat {
     title: string;
-    position: number;
+    position: string;
     image: string;
     type: string;
 }

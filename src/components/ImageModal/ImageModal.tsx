@@ -1,6 +1,7 @@
 import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 import { Image } from '../Image';
 import './ImageModal.css';
+import { Cat } from '../../models/cats';
 
 interface IModalProps {
     onClose?: () => void;
