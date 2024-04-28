@@ -4,6 +4,10 @@
   padding: 2rem;
 }
 
+.app-title {
+  color: black;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

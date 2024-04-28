@@ -1,4 +1,5 @@
 import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import Image from '../Image/Image';
 import './Modal.css';
 
 interface IModalProps {
@@ -47,7 +48,7 @@ const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalHandle>)
     return (
         <div className={`modal-container ${open ? 'opened' : ''}`}>
             <div className="image-container">
-                <img src={image} alt="Preview image" loading="lazy" />
+                <Image url={image} alt="Preview image" width={400} height={400}/>
             </div>
         </div>
     )
