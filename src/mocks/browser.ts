@@ -5,7 +5,7 @@ export const worker = setupWorker(
    http.get('/api/cats', (async () => {
       const cachedCats = await caches.open('cats-cache');
       const response = await cachedCats.match('/api/cats');
-      const cats = await response.json() ?? {};
+      const cats = await response?.json() ?? {};
       return HttpResponse.json(cats);
       })
    )

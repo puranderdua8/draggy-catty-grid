@@ -60,7 +60,7 @@ export const App: FC = () => {
 		if (hasChanged.current) {
 			await storeCatsInCache({ cats: [...cats] });
 			await fetchCats();
-			setTimeSinceLastSaved(+new Date());
+			setTimeSinceLastSaved(+new Date() - 1000);
 		}
 	};
 
