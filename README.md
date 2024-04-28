@@ -35,16 +35,14 @@ I want to follow this approach because the parent will have a grid of cards that
 I would use react's `useImperativeHandle` along with `forwardRef` to create a component that exposes the method to trigger opening of the modal.
 I would trigger this method on click of a card in the parent and the modal should work as expected.
 
-I have completed the basic functionality of the application, i.e. showing a grid of cats and previewing the selected one.
+I have completed the front-end part of the task, i.e. showing a grid of cats, previewing the selected one, re-arranging them and showing a loader while they are not yet fully loaded.
 
 #### Next steps:
 
-Implement lazy loading for images - show a loader by default, and use the image onLoad prop to handle hiding of the loader.(will create an image component that takes care of individual loading states and accepts image URL as a prop).
-Implement drag-and-drop for image cards - mark individual cards as draggable and onDrop of a card, identify the card which is being dropped on and swap the positions of the two cards.
-
-With this, I will be done with the front-end part of the application.
-I will then start working on the creation of a local service that mocks a server nad persisting data in the browser via `localStorage/sessionStorage`.
+Working on the creation of a local service that mocks a server and persisting data in the browser via `localStorage/sessionStorage`.
 `localStorage` will remember the data even on close of the tab, but `sessionStorage` might be better if we want fresh data every time user opens the URL.
+
+Use docker to start application as a micro-service
 
 ## How to run
 
