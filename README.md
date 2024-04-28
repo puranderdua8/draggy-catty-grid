@@ -43,9 +43,9 @@ I have completed step 2 of the task. I managed to set up a mock service worker w
 As the app mounts, I store the mock data in the cache before the app mounts and fetch data from the cache in the mock service.
 I wanted to test whether things are working fine or not and I called the API as a part of step 2 itself.
 
-#### Next steps:
+I managed to implement the auto save functionality and show the time since last save on the page.
 
-Working on the auto-refresh and save functionality if the order has changed to finish step 3.
+#### Next steps:
 
 Use docker to start application as a micro-service
 
