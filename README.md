@@ -45,19 +45,15 @@ I wanted to test whether things are working fine or not and I called the API as 
 
 I managed to implement the auto save functionality and show the time since last save on the page.
 
-#### Next steps:
-
-Use docker to start application as a micro-service
+I completed the docker setup as expected. 
+We have a Dockerfile for the frontend application and a docker-compose file defining the frontend app as one of the services.
+We can add and configure other services that need to run along with the frontend application in the docker-compose yaml.
 
 ## How to run
 
-Clone the repository using either git clone or ssh
-
+Clone the repository using git clone or ssh
 Go to the root folder
-
-run `npm install`
-
-run `npm run dev`
-
+run `docker-compose up --build`
+Open the app in the browser at [localhost:3000](http://localhost:3000)
 
 P.S. I am applying for the role of Senior Frontend Engineer.
