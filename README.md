@@ -35,7 +35,12 @@ I want to follow this approach because the parent will have a grid of cards that
 I would use react's `useImperativeHandle` along with `forwardRef` to create a component that exposes the method to trigger opening of the modal.
 I would trigger this method on click of a card in the parent and the modal should work as expected.
 
+## Progress
+
 I have completed the front-end part of the task, i.e. showing a grid of cats, previewing the selected one, re-arranging them and showing a loader while they are not yet fully loaded.
+
+I have completed step 2 of the task. I managed to set up a mock service worker with a `/api/cats` endpoint that gives us the data we need.
+As the app mounts, I store the mock data in the cache before the app mounts and fetch data from the cache in the mock service.
 
 #### Next steps:
 
