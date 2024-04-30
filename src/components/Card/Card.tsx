@@ -13,7 +13,7 @@ export const Card: FC<ICard> = ({
     image, 
     onImageClick
 }) => (
-    <div>
+    <div className="card-wrapper">
         <h4 className="cat-title">{title}</h4>
         <Image url={image} alt={title} width={400} height={400} onClick={onImageClick} />
     </div>

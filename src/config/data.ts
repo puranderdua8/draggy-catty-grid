@@ -3,32 +3,32 @@ export const mockCats = {
         {
         "type":"bank-draft",
         "title":"Bank Draft",
-        "position":"0",
-        "image":"https://cataas.com/cat?width=400&height=400"
+        "position":1,
+        "image":"https://cdn.pixabay.com/photo/2022/06/27/14/38/cat-7287671_640.jpg"
         },
         {
         "type":"bill-of-lading",
         "title":"Bill of Lading",
-        "position":"1",
-        "image":"https://cataas.com/cat/orange,cute?width=400&height=400"
+        "position":2,
+        "image":"https://cdn.pixabay.com/photo/2021/03/31/03/12/cat-6138366_640.jpg"
         },
         {
         "type":"invoice",
         "title":"Invoice",
-        "position":"2",
-        "image":"https://cataas.com/cat/says/hello?width=400&height=400"
+        "position":3,
+        "image":"https://cdn.pixabay.com/photo/2023/11/27/15/41/cat-8415620_640.jpg"
         },
         {
         "type":"bank-draft-2",
         "title":"Bank Draft 2",
-        "position":"3",
-        "image":"https://cataas.com/cat/cute/says/hello?width=400&height=400"
+        "position":4,
+        "image":"https://cdn.pixabay.com/photo/2023/07/30/00/12/cat-8157889_640.png"
         },
         {
         "type":"bill-of-lading-2",
         "title":"Bill of Lading 2",
-        "position":"4",
-        "image":"https://cataas.com/cat/says/hello?width=400&height=400&fontSize=50&fontColor=red"
+        "position":5,
+        "image":"https://cdn.pixabay.com/photo/2023/04/15/17/19/cat-7928232_640.png"
         }
     ]
 }

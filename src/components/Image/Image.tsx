@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import Loader from '../Loader/Loader';
+import { Loader } from '../Loader';
 import './Image.css';
 
 interface IImage {
@@ -17,6 +17,6 @@ export const Image: FC<IImage> = ({url, alt, width, height, onClick}) => {
 
     return <div style={{width, height}} onClick={onClick}>
         {loading && <Loader />}
-        {<img src={url} onLoad={hideLoader} alt={alt} onError={hideLoader} draggable={false} />}
+        {<img src={url} onLoad={hideLoader} alt={alt} onError={hideLoader} draggable={false} className="img-item" />}
     </div>
 };

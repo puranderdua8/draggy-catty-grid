@@ -5,9 +5,10 @@ import { getCats } from './services/cats';
 import { Card } from './components/Card';
 import { Cat } from './models/cats';
 import { storeCatsInCache } from './utils/cache';
-import Loader from './components/Loader/Loader';
+import { Loader } from './components/Loader';
 import { useInterval } from './hooks/useInterval';
 import { Timer } from './components/Timer';
+import { reArrangeGrid } from './utils/grid';
 
 export const App: FC = () => {
 
@@ -15,7 +16,7 @@ export const App: FC = () => {
 	const modalRef = useRef<ModalHandle>(null);
 	const hasChanged = useRef(false);
 
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState<boolean>(false);
 	const [cats, setCats] = useState<Cat[]>([]);
 	const [timeSinceLastSaved, setTimeSinceLastSaved] = useState<number>(0);
 
@@ -36,21 +37,7 @@ export const App: FC = () => {
 		if (draggedCat.position === catDroppedOn.position) {
 			return;
 		}
-		const newCatsList = cats.map((c) => {
-			let newPosition = c.position;
-			if (draggedCat.title === c.title) {
-				newPosition = catDroppedOn.position;
-			}
-			if (catDroppedOn.title === c.title) {
-				newPosition = draggedCat.position;
-			}
-
-			return {
-				...c,
-				position: newPosition
-			}
-		}).sort((a, b) => +a.position - +b.position);
-		setCats(newCatsList);
+		setCats((oldCats) => reArrangeGrid(oldCats, draggedCat, catDroppedOn).sort((a, b) => a.position - b.position));
 		if (!hasChanged.current) {
 			hasChanged.current = true;
 		}
@@ -65,11 +52,14 @@ export const App: FC = () => {
 	};
 
 	const fetchCats = async () => {
-		setLoading(true);
-		const catList = await getCats();
-		setCats(catList.cats);
-		setLoading(false);
-		hasChanged.current = false;
+		try {
+			setLoading(true);
+			const catList = await getCats();
+			setCats(catList.cats);
+			hasChanged.current = false;
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	useInterval(saveGrid, 5000);
@@ -104,9 +94,7 @@ export const App: FC = () => {
 				)
 				}
 			</div>}
-			<ImageModal ref={modalRef} onClose={function (): void {
-				throw new Error('Function not implemented.');
-			}} />
+			<ImageModal ref={modalRef} onClose={(): void => {}} />
 		</div>
 	)
 };

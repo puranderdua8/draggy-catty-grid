@@ -24,16 +24,13 @@ export const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalH
     }
 
     const handleCloseOnEscape = (event: KeyboardEvent): void => {
-        
         if(event.key === 'Escape') {
             handleClose();
         }
     };
     
     useEffect(() => {
-        
         window.addEventListener('keydown', handleCloseOnEscape, false);
-
         () => {
             window.removeEventListener('keydown', handleCloseOnEscape, false);
         }
@@ -49,7 +46,7 @@ export const ImageModal = forwardRef((props: IModalProps, ref: React.Ref<IModalH
     return (
         <div className={`modal-container ${open ? 'opened' : ''}`}>
             <div className="image-container">
-                <Image url={image} alt="Preview image" width={400} height={400}/>
+                <Image url={image} alt="Preview image" width={640} height={640}/>
             </div>
         </div>
     )
